@@ -9,6 +9,7 @@ ShareLib::ShareLib(QWidget *parent)
 	ui.scrollArea->setWidgetResizable(true);
 	ui.pathEdit->OnEditingFInished([&]()
 	{
+		mFlowLayout->deleteAllItem();
 		QString path = ui.pathEdit->text();
 		QDir dir(path);
 
