@@ -43,6 +43,9 @@
     <ClCompile Include="ShareLib.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="customlabel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -66,6 +69,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="imageloadthread.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="customlabel.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

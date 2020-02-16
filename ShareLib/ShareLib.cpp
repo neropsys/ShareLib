@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "ShareLib.h"
 #include "imageloadthread.h"
+#include "customlabel.h"
+#include <QFileDialog>
 ShareLib::ShareLib(QWidget *parent)
 	: QMainWindow(parent), mFlowLayout(nullptr)
 {
@@ -10,10 +12,9 @@ ShareLib::ShareLib(QWidget *parent)
 	ui.scrollArea->setBackgroundRole(QPalette::Dark);
 	ui.pathEdit->OnEditingFInished([&]()
 	{
-
+		QString path = QFileDialog::getExistingDirectory(this, "경로선택");
 		qDeleteAll(ui.scrollAreaWidgetContents->findChildren<QLabel*>(QString(), Qt::FindDirectChildrenOnly));
 
-		QString path = ui.pathEdit->text();
 		QDir dir(path);
 
 		QStringList fileNames = dir.entryList(QStringList() << "*.zip" << "*.ZIP", QDir::Files);
@@ -37,17 +38,29 @@ ShareLib::ShareLib(QWidget *parent)
 	});
 }
 
-void ShareLib::SetImage(const QImage& image, const QString& fileName)
+void ShareLib::SetImage(const QImage& image, const QString& fileName, const QString& path)
 {
 
 	//Thumb
-	QLabel* imageLabel = new QLabel;
+	CustomLabel* imageLabel = new CustomLabel;
 
 	imageLabel->setPixmap(QPixmap::fromImage(image).scaled(QSize(355, 500), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 	imageLabel->setToolTip(fileName);
 	imageLabel->setMinimumSize(QSize(355, 500));
 	imageLabel->setMaximumSize(QSize(355, 500));
 	imageLabel->setBackgroundRole(QPalette::Dark);
+	imageLabel->OnDoubleClick([=]()
+	{
+
+		QProcess* process = new QProcess(this);
+		QString program("\"C:/Program Files/Honeyview/Honeyview.exe\"");
+		program.push_back(' ');
+		program.push_back('\"');
+		program.append(path);
+		program.push_back('\"');
+		process->startDetached(program);
+	});
+	
 	mFlowLayout->addWidget(imageLabel);
 	imageList.push_back(imageLabel);
 }

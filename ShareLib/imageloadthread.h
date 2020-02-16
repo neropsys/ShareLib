@@ -41,7 +41,7 @@ class ImageLoadThread : public QThread
 
 		if (isLoaded)
 		{
-			emit resultReady(result, mFileName);
+			emit resultReady(result, mFileName, mPath);
 		}
 	}
 public:
@@ -59,5 +59,5 @@ private:
 	QString mFileName;
 	QuaZip mZip;
 signals:
-	void resultReady(const QImage &image, const QString& fileName);
+	void resultReady(const QImage &image, const QString& fileName, const QString& path);
 };

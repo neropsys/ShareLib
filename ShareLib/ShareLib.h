@@ -16,5 +16,5 @@ private:
 	QVector<QWidget*> imageList;
 	Ui::ShareLibClass ui;
 	FlowLayout* mFlowLayout=nullptr;
-	void SetImage(const QImage& image, const QString& fileName);
+	void SetImage(const QImage& image, const QString& fileName, const QString& path);
 };
