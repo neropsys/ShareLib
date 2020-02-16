@@ -10,7 +10,9 @@ ShareLib::ShareLib(QWidget *parent)
 	ui.scrollArea->setBackgroundRole(QPalette::Dark);
 	ui.pathEdit->OnEditingFInished([&]()
 	{
-		mFlowLayout->deleteAllItem();
+
+		qDeleteAll(ui.scrollAreaWidgetContents->findChildren<QLabel*>(QString(), Qt::FindDirectChildrenOnly));
+
 		QString path = ui.pathEdit->text();
 		QDir dir(path);
 
@@ -29,16 +31,23 @@ ShareLib::ShareLib(QWidget *parent)
 
 		
 	});
+	connect(ui.powerBtn, &QPushButton::clicked, this, [&]()
+	{
+		qDeleteAll(ui.scrollAreaWidgetContents->findChildren<QLabel*>(QString(), Qt::FindDirectChildrenOnly));
+	});
 }
 
 void ShareLib::SetImage(const QImage& image, const QString& fileName)
 {
+
+	//Thumb
 	QLabel* imageLabel = new QLabel;
 
-	imageLabel->setPixmap(QPixmap::fromImage(image).scaled(QSize(355, 500), Qt::IgnoreAspectRatio));
+	imageLabel->setPixmap(QPixmap::fromImage(image).scaled(QSize(355, 500), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 	imageLabel->setToolTip(fileName);
 	imageLabel->setMinimumSize(QSize(355, 500));
 	imageLabel->setMaximumSize(QSize(355, 500));
 	imageLabel->setBackgroundRole(QPalette::Dark);
 	mFlowLayout->addWidget(imageLabel);
+	imageList.push_back(imageLabel);
 }

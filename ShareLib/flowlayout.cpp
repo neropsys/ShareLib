@@ -68,16 +68,10 @@ FlowLayout::FlowLayout(int margin, int hSpacing, int vSpacing)
 //! [2]
 FlowLayout::~FlowLayout()
 {
-	deleteAllItem();
-}
-
-void FlowLayout::deleteAllItem()
-{
 	QLayoutItem *item;
 	while ((item = takeAt(0)))
 		delete item;
 }
-
 //! [2]
 
 //! [3]
@@ -175,6 +169,7 @@ QSize FlowLayout::minimumSize() const
 	return size;
 }
 //! [8]
+
 
 //! [9]
 int FlowLayout::doLayout(const QRect &rect, bool testOnly) const

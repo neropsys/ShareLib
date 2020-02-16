@@ -37,6 +37,13 @@
         </property>
        </widget>
       </item>
+      <item>
+       <widget class="QPushButton" name="deleteAllBtn">
+        <property name="text">
+         <string>이미지삭제</string>
+        </property>
+       </widget>
+      </item>
      </layout>
     </item>
     <item>
