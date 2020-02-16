@@ -49,10 +49,10 @@ void ShareLib::SetImage(const QImage& image, const QString& fileName, const QStr
 	imageLabel->setMinimumSize(QSize(355, 500));
 	imageLabel->setMaximumSize(QSize(355, 500));
 	imageLabel->setBackgroundRole(QPalette::Dark);
-	imageLabel->OnDoubleClick([=]()
+	imageLabel->OnDoubleClick([path]()
 	{
 
-		QProcess* process = new QProcess(this);
+		QProcess* process = new QProcess();
 		QString program("\"C:/Program Files/Honeyview/Honeyview.exe\"");
 		program.push_back(' ');
 		program.push_back('\"');
