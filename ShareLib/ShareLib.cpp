@@ -7,15 +7,16 @@ ShareLib::ShareLib(QWidget *parent)
 	ui.setupUi(this);
 	mFlowLayout = new FlowLayout(ui.scrollAreaWidgetContents);
 	ui.scrollArea->setWidgetResizable(true);
+	ui.scrollArea->setBackgroundRole(QPalette::Dark);
 	ui.pathEdit->OnEditingFInished([&]()
 	{
 		mFlowLayout->deleteAllItem();
 		QString path = ui.pathEdit->text();
 		QDir dir(path);
 
-		QStringList images = dir.entryList(QStringList() << "*.jpg" << "*.png" << "*.PNG" << "*.JPG", QDir::Files);
-		ui.scrollArea->setBackgroundRole(QPalette::Dark);
-		for each (QString fileName in images)
+		QStringList fileNames = dir.entryList(QStringList() << "*.zip" << "*.ZIP", QDir::Files);
+
+		for each (QString fileName in fileNames)
 		{
 			ImageLoadThread* workerThread = new ImageLoadThread(path + "/" + fileName, fileName);
 

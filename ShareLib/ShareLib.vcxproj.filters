@@ -23,6 +23,9 @@
       <Extensions>qrc;*</Extensions>
       <ParseFiles>false</ParseFiles>
     </Filter>
+    <Filter Include="quazip">
+      <UniqueIdentifier>{7820418d-e314-490e-a1ce-0ac88ce2352b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -48,6 +51,12 @@
     <ClInclude Include="flowlayout.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="quazip\quazip.h">
+      <Filter>quazip</Filter>
+    </ClInclude>
+    <ClInclude Include="quazip\quazip_global.h">
+      <Filter>quazip</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="ShareLib.h">
@@ -72,5 +81,10 @@
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ShareLib.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zlib1.dll">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
