@@ -19,3 +19,4 @@ SOURCES += ./clickeventlineedit.cpp \
     ./stdafx.cpp
 FORMS += ./ShareLib.ui
 RESOURCES += ShareLib.qrc
+QT += concurrent

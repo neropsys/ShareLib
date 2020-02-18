@@ -94,7 +94,7 @@
          </attribute>
          <layout class="QVBoxLayout" name="verticalLayout_4">
           <item>
-           <widget class="QScrollArea" name="scrollArea">
+           <widget class="CustomScrollArea" name="scrollArea">
             <property name="sizeAdjustPolicy">
              <enum>QAbstractScrollArea::AdjustToContents</enum>
             </property>
@@ -168,6 +168,12 @@
    <class>ClickEventLineEdit</class>
    <extends>QLineEdit</extends>
    <header>clickeventlineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CustomScrollArea</class>
+   <extends>QScrollArea</extends>
+   <header>customscrollarea.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources>

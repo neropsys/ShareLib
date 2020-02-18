@@ -13,6 +13,7 @@ ShareLib::ShareLib(QWidget *parent)
 	ui.pathEdit->OnEditingFInished([&]()
 	{
 		QString path = QFileDialog::getExistingDirectory(this, "경로선택");
+		ui.pathEdit->setText(path);
 		qDeleteAll(ui.scrollAreaWidgetContents->findChildren<QLabel*>(QString(), Qt::FindDirectChildrenOnly));
 
 		QDir dir(path);
@@ -44,10 +45,8 @@ void ShareLib::SetImage(const QImage& image, const QString& fileName, const QStr
 	//Thumb
 	CustomLabel* imageLabel = new CustomLabel;
 
-	imageLabel->setPixmap(QPixmap::fromImage(image).scaled(QSize(355, 500), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+	imageLabel->setPixmap(QPixmap::fromImage(image));
 	imageLabel->setToolTip(fileName);
-	imageLabel->setMinimumSize(QSize(355, 500));
-	imageLabel->setMaximumSize(QSize(355, 500));
 	imageLabel->setBackgroundRole(QPalette::Dark);
 	imageLabel->OnDoubleClick([path]()
 	{
@@ -62,5 +61,4 @@ void ShareLib::SetImage(const QImage& image, const QString& fileName, const QStr
 	});
 	
 	mFlowLayout->addWidget(imageLabel);
-	imageList.push_back(imageLabel);
 }

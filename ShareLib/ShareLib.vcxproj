@@ -49,11 +49,11 @@
   </ImportGroup>
   <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <QtInstall>5.14</QtInstall>
-    <QtModules>core;gui;multimedia;multimediawidgets;network;networkauth;quick;quickwidgets;quickcontrols2;uitools;webchannel;websockets;webengine;webenginewidgets;widgets</QtModules>
+    <QtModules>concurrent;core;gui;multimedia;multimediawidgets;network;networkauth;quick;quickcontrols2;quickwidgets;uitools;webchannel;webengine;webenginewidgets;websockets;widgets</QtModules>
   </PropertyGroup>
   <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <QtInstall>5.14</QtInstall>
-    <QtModules>core;gui;multimedia;multimediawidgets;network;networkauth;quick;quickwidgets;quickcontrols2;uitools;webchannel;websockets;webengine;webenginewidgets;widgets</QtModules>
+    <QtModules>concurrent;core;gui;multimedia;multimediawidgets;network;networkauth;quick;quickcontrols2;quickwidgets;uitools;webchannel;webengine;webenginewidgets;websockets;widgets</QtModules>
   </PropertyGroup>
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
     <Import Project="$(QtMsBuild)\qt.props" />
@@ -109,6 +109,7 @@
   <ItemGroup>
     <ClCompile Include="clickeventlineedit.cpp" />
     <ClCompile Include="customlabel.cpp" />
+    <ClCompile Include="customscrollarea.cpp" />
     <ClCompile Include="flowlayout.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ShareLib.cpp" />
@@ -119,6 +120,7 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="customlabel.h" />
+    <QtMoc Include="customscrollarea.h" />
     <ClInclude Include="flowlayout.h" />
     <QtMoc Include="imageloadthread.h" />
     <QtMoc Include="clickeventlineedit.h" />

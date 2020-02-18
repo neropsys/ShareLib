@@ -13,12 +13,7 @@ public:
 	{
 		mOnEditFinished = eventFunc;
 	}
-	inline const QString& GetPath()const
-	{
-		return mSelectedPath;
-	}
 protected:
-	QString mSelectedPath;
 	std::function<void()> mOnEditFinished;
 	void doubleClicked();
 
