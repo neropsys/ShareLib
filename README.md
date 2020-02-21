@@ -6,3 +6,4 @@ viewing image in zip files
 working on ftp function
 
 used Quazip & zlib library
+![preview](doc/preview.PNG)
