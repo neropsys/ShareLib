@@ -107,11 +107,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="clickeventlineedit.cpp" />
+    <ClCompile Include="PathSetLineEdit.cpp" />
     <ClCompile Include="customlabel.cpp" />
     <ClCompile Include="customscrollarea.cpp" />
     <ClCompile Include="flowlayout.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Setting.cpp" />
     <ClCompile Include="ShareLib.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -123,13 +124,15 @@
     <QtMoc Include="customscrollarea.h" />
     <ClInclude Include="flowlayout.h" />
     <QtMoc Include="imageloadthread.h" />
-    <QtMoc Include="clickeventlineedit.h" />
+    <QtMoc Include="PathSetLineEdit.h" />
     <QtMoc Include="ShareLib.h" />
     <ClInclude Include="quazip\quazip.h" />
     <ClInclude Include="quazip\quazip_global.h" />
+    <QtMoc Include="Setting.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtUic Include="Setting.ui" />
     <QtUic Include="ShareLib.ui" />
   </ItemGroup>
   <ItemGroup>

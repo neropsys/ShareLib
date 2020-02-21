@@ -34,9 +34,6 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="clickeventlineedit.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="flowlayout.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -47,6 +44,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="customscrollarea.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Setting.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PathSetLineEdit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -68,9 +71,6 @@
     <QtMoc Include="ShareLib.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="clickeventlineedit.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
     <QtMoc Include="imageloadthread.h">
       <Filter>Header Files</Filter>
     </QtMoc>
@@ -80,9 +80,18 @@
     <QtMoc Include="customscrollarea.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="Setting.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="PathSetLineEdit.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="ShareLib.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="Setting.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

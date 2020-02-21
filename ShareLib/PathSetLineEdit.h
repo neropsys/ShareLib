@@ -2,18 +2,19 @@
 
 #include <QLineEdit>
 #include <functional>
-class ClickEventLineEdit : public QLineEdit
+class PathSetLineEdit : public QLineEdit
 {
 	Q_OBJECT
 
 public:
-	ClickEventLineEdit(QWidget *parent);
-	~ClickEventLineEdit();
+	PathSetLineEdit(QWidget *parent, bool fileMode=false);
+	~PathSetLineEdit();
 	inline void OnEditingFInished(std::function<void()> eventFunc)
 	{
 		mOnEditFinished = eventFunc;
 	}
 protected:
+	bool mFileMode = false;
 	std::function<void()> mOnEditFinished;
 	void doubleClicked();
 

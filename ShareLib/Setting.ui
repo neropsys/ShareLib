@@ -24,16 +24,29 @@
       </widget>
      </item>
      <item row="0" column="1">
-      <widget class="QLineEdit" name="lineEdit">
+      <widget class="PathSetLineEdit" name="lineEdit">
        <property name="text">
         <string>C:\Program Files\Honeyview\Honeyview.exe</string>
        </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
       </widget>
+     </item>
+     <item row="1" column="1">
+      <layout class="QGridLayout" name="gridLayout"/>
      </item>
     </layout>
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PathSetLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>PathSetLineEdit.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
